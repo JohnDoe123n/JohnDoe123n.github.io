@@ -3,33 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JohnDoe123n 的作品集</title>
+    <title>LiveChat 页面</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
             background-color: #f4f4f9;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
         }
     </style>
 </head>
 <body>
-    <h1>欢迎来到我的作品集</h1>
-    <p>我是 JohnDoe123n，设计师与开发者。以下是我部分的项目展示：</p>
-
     <!-- Start of LiveChat code -->
     <script>
         window.__lc = window.__lc || {};
         window.__lc.license = 19310665;
         window.__lc.integration_name = "manual_channels";
         window.__lc.product_name = "livechat";
-        ;(function(n,t,c){
+        (function(n,t,c){
             function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}
             var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){
                 var n=t.createElement("script");
@@ -37,15 +28,15 @@
                 n.type="text/javascript";
                 n.src="https://cdn.livechatinc.com/tracking.js";
                 t.head.appendChild(n);
-            }};
+            }}; 
             !n.__lc.asyncInit&&e.init();
             n.LiveChatWidget=n.LiveChatWidget||e
         }(window,document,[].slice));
 
-        // 自动打开聊天窗口
-        window.__lc.asyncInit = function() {
+        // 等待小部件准备好后自动打开聊天窗口
+        LiveChatWidget.on('ready', function() {
             LC_API.open_chat_window();
-        };
+        });
     </script>
     <noscript>
         <a href="https://www.livechat.com/chat-with/19310665/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
@@ -53,3 +44,4 @@
     <!-- End of LiveChat code -->
 </body>
 </html>
+
